@@ -1,0 +1,19 @@
+
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+PUMP_PIN = 17  # GPIO17
+
+GPIO.setup(PUMP_PIN, GPIO.OUT)
+
+# Turn pump ON
+GPIO.output(PUMP_PIN, GPIO.HIGH)
+print("Pump ON")
+time.sleep(5)
+
+# Turn pump OFF
+GPIO.output(PUMP_PIN, GPIO.LOW)
+print("Pump OFF")
+
+GPIO.cleanup()
